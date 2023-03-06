@@ -91,6 +91,77 @@ Humans developed Supernatural abilities, and their offspring seldom manifested a
   </tbody>
 </table>
 
+### Roles
+Every Role has a Skill and a Bonus in two derived stats.
+
+<table>
+  <thead>
+    <th>Role</th>
+    <th>Description</th>
+    <th nowrap>Bonus to</th>
+    <th nowrap>Skill name</th>
+    <th nowrap>Skill decription</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td nowrap>🥾 Strider</td>
+      <td>A traveller ready to venture into the wilderness with a steady step.</td>
+      <td nowrap>Speed and Prowess</td>
+      <td nowrap>Strong Grip</td>
+      <td>On a successful Maneuver, Attack as well.</td>
+    </tr>
+    <tr>
+      <td nowrap>🧑‍🏭 Fixer</td>
+      <td>An ingenous inventor who skillfully crafts the right tool for the job.</td>
+      <td nowrap>Craft and Connection</td>
+      <td nowrap>Sly Scraper</td>
+      <td>When using a disposable Item, attempt to Craft it back immediately at no additional cost.</td>
+    </tr>
+    <tr>
+      <td nowrap>🥷 Stalker</td>
+      <td>Quick on their feet, aiming to end fights as soon as they begin.</td>
+      <td nowrap>Attack and Speed</td>
+      <td nowrap>Spell Thief</td>
+      <td>On a Critical Hit, steal Energy from the opponent.</td>
+    </tr>
+    <tr>
+      <td nowrap>🪖 Fighter</td>
+      <td>An all-round warrior whose forte is surviving on the battlefield while making sure the enemy doesn't.</td>
+      <td nowrap>Attack and Defense</td>
+      <td nowrap>Assault Battery</td>
+      <td>When using an Item against a single opponent, Attack as well.</td>
+    </tr>
+    <tr>
+      <td nowrap>🧙 Channeler</td>
+      <td>An Otherworlds enthusiast who acts as a link between the two worlds.</td>
+      <td nowrap>Energy and Aura</td>
+      <td nowrap>Direct Connection</td>
+      <td>Gain 1 Energy per round</td>
+    </tr>
+    <tr>
+      <td nowrap>🧑‍🎤 Raver</td>
+      <td>A charismatic idol who gives an otherworldly twist to their parties.</td>
+      <td nowrap>Energy and Fate</td>
+      <td nowrap>Distraction Theft</td>
+      <td>On Inspire, there is a chance to steal Items or money away from an opponent.</td>
+    </tr>
+    <tr>
+      <td nowrap>🗣 Speaker</td>
+      <td>A madman whose words are imbued with the power of the Otherworlds.</td>
+      <td nowrap>Aura and Fate</td>
+      <td nowrap>Vox Dei</td>
+      <td>On Inspire, there is a chance to draw Energy from the Otherworlds.</td>
+    </tr>
+    <tr>
+      <td nowrap>🧑‍⚕ Healer</td>
+      <td>A good soul whose purpose is to help others by preventing and healing damage.</td>
+      <td nowrap>Defense and Connection</td>
+      <td nowrap>Parry Medic</td>
+      <td>On a successful Defense, heal the defended by how much your Defense surpassed the opponent's Attack.</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Tech Stack
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Deno JS](https://img.shields.io/badge/deno%20js-000000?style=for-the-badge&logo=deno&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)
 
