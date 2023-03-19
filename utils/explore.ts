@@ -2,9 +2,9 @@ import { explorationReward } from './explorationReward.ts'
 import { punks } from '../interfaces/Punk.ts';
 import { equipables } from '../interfaces/Equipable.ts';
 
-export const explore = async (ctx) => {
+export const explore = async (ctx):Promise<void> => {
 
-  const chatId = await ctx.chat.id;
+  const chatId:number = await ctx.chat.id;
     
   // Find Punk who wants to explore
   const punk = await punks.findOne({ chatId: chatId });
@@ -19,9 +19,9 @@ export const explore = async (ctx) => {
       return
     }
 
-    const message = `Your Punk is already out, and will be back on ${ arrival }.`
+    const message = `Your Punk is already out, and will be back on ${ arrival }.`;
 
-    return message;
+    ctx.reply(message);
 
   } else {
     
@@ -45,7 +45,7 @@ export const explore = async (ctx) => {
 
     const message = `Your Punk begins exploring, and will be back on ${ arrival }.`
 
-    return message;
+    ctx.reply(message);
 
   }
       

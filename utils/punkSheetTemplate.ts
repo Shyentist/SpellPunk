@@ -1,6 +1,6 @@
 import { punks } from "../interfaces/Punk.ts";
 
-export const punkSheetTemplate  = async (ctx) => {
+export const punkSheetTemplate  = async (ctx):Promise<string> => {
 
     const punk = await punks.findOne({ chatId: ctx.chat.id });
 
@@ -24,4 +24,4 @@ export const punkSheetTemplate  = async (ctx) => {
     Fate:       ${punk.sheet.fate}</pre>`
     
     return sheet;
-}
+};

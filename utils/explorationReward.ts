@@ -1,6 +1,6 @@
 import { punks } from '../interfaces/Punk.ts';
 
-export const explorationReward = async (ctx) => {
+export const explorationReward = async (ctx):Promise<void> => {
 
     const chatId = await ctx.chat.id;
     

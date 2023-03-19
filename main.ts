@@ -10,18 +10,34 @@ import { startKeyboard } from './customKeyboards/startKeyboard.ts';
 
 // Utils
 import { explore } from './utils/explore.ts'
+import { inventory } from './utils/inventory.ts';
 import { punkSheetTemplate } from './utils/punkSheetTemplate.ts';
 
+// Custom Context
+import { MyContext } from './interfaces/MyContext.ts';
+
 // _dev
+import { token } from './_dev/_token.ts';
 import { rarities, objects, buildEquipables } from './_dev/_equipables.js';
-import { token } from './_dev/token.ts';
+import { BOT_DEVELOPER } from './_dev/_devId.ts';
 
 // Create Bot
-const bot = await new Bot(token);
+const bot = await new Bot<MyContext>(token);
 
 // Use Menus
 bot.use(rollNewMenu);
 bot.use(infoMenu);
+
+// Config
+bot.use(async (ctx, next) => {
+  // Modify context object here by setting the config.
+  ctx.config = {
+    botDeveloper: BOT_DEVELOPER,
+    isDeveloper: ctx.from?.id === BOT_DEVELOPER,
+  };
+  // Run remaining handlers.
+  await next();
+});
 
 bot.command('start', async (ctx) => {
 
@@ -32,12 +48,6 @@ If you wish to read a systematic description of this world, you can click on the
   await ctx.reply(worldIntroText, { reply_markup: startKeyboard });
 
 });
-
-//bot.command('build_equip', async (ctx) => { 
-//  await buildEquipables(objects, rarities)
-
-//  ctx.reply("Done")
-//})
 
 bot.hears(/^Lore$|^📚 Lore$/, async (ctx) => {
   await ctx.reply('On which of these topics would you like to be enlightened?', { reply_markup: infoMenu });
@@ -58,9 +68,24 @@ bot.hears(/^Sheet$|^📝 Sheet$/ , async (ctx) => {
 
 bot.hears(/^Explore$|^🗺 Explore$/ , async (ctx) => {
 
-  const message = await explore(ctx);
-
-  ctx.reply(message);
+  await explore(ctx);
 })
+
+bot.hears(/^Inventory$|^🎒 Inventory$/ , async (ctx) => {
+
+  await inventory(ctx);
+})
+
+// dev only
+
+bot.command('build_equip', async (ctx) => { 
+
+  if(ctx.config.isDeveloper){
+    await buildEquipables(objects, rarities);
+
+    ctx.reply("Done");
+  }
+  
+});
 
 bot.start();

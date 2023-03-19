@@ -1,4 +1,4 @@
-export const writePunkSheet = async (punk) => {
+export const writePunkSheet = async (punk):Promise<object> => {
     let { race, role, progress } = punk;
 
     // Pool together all the skills from different sources
